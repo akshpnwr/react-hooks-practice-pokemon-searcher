@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import PokemonContext from "../pokemon-context";
 import PokemonPage from "./PokemonPage";
 
 function App() {
@@ -11,7 +12,6 @@ function App() {
 
     const { pokemon: pokemons } = await res.json();
 
-    console.log(pokemons);
     setPokemons(pokemons);
   }, []);
 
@@ -21,7 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      <PokemonPage pokemons={pokemons} />
+      <PokemonContext.Provider value={{ pokemons }}>
+        <PokemonPage />
+      </PokemonContext.Provider>
     </div>
   );
 }

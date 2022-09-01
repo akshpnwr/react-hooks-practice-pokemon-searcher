@@ -4,7 +4,7 @@ import PokemonForm from "./PokemonForm";
 import Search from "./Search";
 import { Container } from "semantic-ui-react";
 
-function PokemonPage(props) {
+function PokemonPage() {
   return (
     <Container>
       <br />
@@ -12,7 +12,7 @@ function PokemonPage(props) {
       <br />
       <Search />
       <br />
-      <PokemonCollection pokemons={props.pokemons} />
+      <PokemonCollection />
     </Container>
   );
 }

@@ -2,8 +2,6 @@ import React from "react";
 import { Card } from "semantic-ui-react";
 
 function PokemonCard(props) {
-  console.log(props);
-
   return (
     <Card>
       <div>

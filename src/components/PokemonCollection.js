@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import PokemonCard from "./PokemonCard";
 import { Card } from "semantic-ui-react";
+import PokemonContext from "../pokemon-context";
 
-function PokemonCollection(props) {
+function PokemonCollection() {
+  const ctx = useContext(PokemonContext);
+
   return (
     <Card.Group itemsPerRow={6}>
-      {props.pokemons.map((pokemon) => (
+      {ctx.pokemons.map((pokemon) => (
         <PokemonCard
           key={pokemon.id}
           name={pokemon.name}
